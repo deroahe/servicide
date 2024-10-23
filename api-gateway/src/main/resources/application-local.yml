@@ -12,6 +12,14 @@ spring:
           uri: http://localhost:8762
           predicates:
             - Path=/eureka/**
+        - id: service-one
+          uri: lb://service-one
+          predicates:
+            - Path=/api/service-one/**
+        - id: service-two
+          uri: lb://service-two
+          predicates:
+            - Path=/api/service-two/**
 
 server:
   port: 9090

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/api/hello-world")
+@RequestMapping("/api/service-two/hello-world")
 public class HelloWorldController {
 
     @GetMapping

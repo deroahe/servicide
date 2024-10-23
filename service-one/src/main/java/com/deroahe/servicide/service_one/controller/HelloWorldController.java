@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono;
 import static org.slf4j.LoggerFactory.getLogger;
 
 @RestController
-@RequestMapping("/api/hello-world")
+@RequestMapping("/api/service-one/hello-world")
 public class HelloWorldController {
 
     private static final Logger LOGGER = getLogger(HelloWorldController.class);
@@ -19,7 +19,7 @@ public class HelloWorldController {
 
     public HelloWorldController(final WebClient.Builder builder) {
         this.client = builder
-                .baseUrl("http://service-two/api")
+                .baseUrl("http://service-two/api/service-two")
                 .filter(((request, next) -> {
                     LOGGER.info("Sending request with URL {}", request.url());
                     return next.exchange(request);
