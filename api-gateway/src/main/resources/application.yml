@@ -17,11 +17,15 @@ spring:
         - id: service-one
           uri: lb://service-one
           predicates:
-            - Path=/api/service-one/**
+            - Path=/service-one/**
+          filters:
+            - StripPrefix=1
         - id: service-two
           uri: lb://service-two
           predicates:
-            - Path=/api/service-two/**
+            - Path=/service-two/**
+          filters:
+            - StripPrefix=1
 
 server:
   port: 8080
